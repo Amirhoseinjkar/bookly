@@ -30,9 +30,9 @@ function PopularBooks(){
           </div>
         )}
         <Header />
-        <button onClick={()=>window.history.back() } className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-[#B07A5A] hover:text-[#F58448] border border-[#B07A5A] hover:border-[#F58448] rounded-md px-3 py-1 mt-4 ml-4 transition-colors duration-200">
+        <button onClick={()=>window.history.back() } className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-[#B07A5A] hover:text-[#F58448] px-3 py-1 mt-4 ml-4 transition-colors duration-200">
         
-          <span>←</span> Go back
+          <span>←</span> back
         </button>
          <p className="text-sm font-medium uppercase tracking-wider text-[#B07A5A] ml-4 mb-3">
             Popular movies of the month
