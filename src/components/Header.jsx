@@ -56,7 +56,7 @@ function Header() {
             />
 
             <button onClick={()=> navigate(`/search?query=${search}`)}>
-              <img src={searchh} alt="Search" className="h-4 w-4 opacity-80" />
+              <img src={searchh} alt="Search" className="h-4 w-4 opacity-80 " />
             </button>
           </div>
 

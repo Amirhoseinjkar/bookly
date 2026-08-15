@@ -3,7 +3,7 @@ import { IoStar } from "react-icons/io5";
 
 function BookCard({ book }) {
   return (
-    <Link to={`/book-details/${book.key}`} className="group block w-35 shrink-0">
+    <Link to={`/book-details/${book.key.split('/').pop()}`}className="group block w-35 shrink-0">
       <article className="flex h-[320px] flex-col overflow-hidden rounded-md border border-[#E8DCCF] bg-[#FFF9F2] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FFB38A] hover:shadow-lg">
 
         {/* Cover */}

@@ -36,10 +36,9 @@ function BookDetails() {
       const ratingResponse = await fetch(
         `https://openlibrary.org/works/${id}/ratings.json`,
       );
-       
+
       const ratingData = await ratingResponse.json();
       setRatings(ratingData.summary);
-      
     }
 
     gettingData();
@@ -102,23 +101,28 @@ function BookDetails() {
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#B07A5A]">
                   Book details
                 </p>
-                <div className="flex gap-7">
+                <div className="flex gap-3 mt-10">
                   <button
                     onClick={() => {
                       readNext.some((read) => read.key === id)
-                        ? setReadNext(readNext.filter((read) => read.key !== id))
+                        ? setReadNext(
+                            readNext.filter((read) => read.key !== id),
+                          )
                         : setReadNext([
                             ...readNext,
                             {
-                             key: id,
+                              key: id,
                               title: books.title,
                               author_name: books.authors[0].author.key,
-                              cover_i: books.covers[0]
-
+                              cover_i: books.covers[0],
                             },
                           ]);
                     }}
-                    className=" rounded-[9px] bg-[#fdd6ae] py-1 px-2 transition-all hover:bg-[#fcb773]"
+                    className={`flex items-center gap-2 rounded-full px-2 py-2 text-sm font-medium transition-all duration-200 ${
+                      readNext.some((read) => read.key === id)
+                        ? "bg-[#E8DCCF] text-[#66574D] hover:bg-[#DFCFC0]"
+                        : "bg-[#FFB38A] text-[#332B26] hover:bg-[#FCA878] hover:shadow-md"
+                    }`}
                   >
                     {readNext.some((read) => read.key === id)
                       ? "✓ On my list"
@@ -127,18 +131,24 @@ function BookDetails() {
                   <button
                     onClick={() => {
                       haveRead.some((read) => read.key === id)
-                        ? setHaveRead(haveRead.filter((read) => read.key !== id))
+                        ? setHaveRead(
+                            haveRead.filter((read) => read.key !== id),
+                          )
                         : setHaveRead([
                             ...haveRead,
                             {
-                            key: id,
+                              key: id,
                               title: books.title,
                               author_name: books.authors[0].author.key,
-                              cover_i: books.covers[0]
+                              cover_i: books.covers[0],
                             },
                           ]);
                     }}
-                    className=" rounded-[9px] bg-[#fdd6ae] py-1 px-2 transition-all hover:bg-[#fcb773]"
+                    className={`flex items-center gap-2 rounded-full border px-2 py-2 text-sm font-medium transition-all duration-200  ${
+                      haveRead.some((read) => read.key === id)
+                        ? "border-[#D8C9BC] bg-[#E8DCCF] text-[#66574D] hover:bg-[#DFCFC0]"
+                        : "border-[#E8DCCF] bg-[#FFF9F2] text-[#66574D] hover:border-[#FFB38A] hover:bg-[#FFF0E1]"
+                    }`}
                   >
                     {haveRead.some((read) => read.key === id)
                       ? "✓ Marked as read"
