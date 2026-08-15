@@ -36,10 +36,10 @@ function BookDetails() {
       const ratingResponse = await fetch(
         `https://openlibrary.org/works/${id}/ratings.json`,
       );
-
+       
       const ratingData = await ratingResponse.json();
       setRatings(ratingData.summary);
-      console.log(ratingData);
+      
     }
 
     gettingData();
@@ -105,41 +105,42 @@ function BookDetails() {
                 <div className="flex gap-7">
                   <button
                     onClick={() => {
-                      readNext.some((read) => read.id === id)
-                        ? setReadNext(readNext.filter((read) => read.id !== id))
+                      readNext.some((read) => read.key === id)
+                        ? setReadNext(readNext.filter((read) => read.key !== id))
                         : setReadNext([
                             ...readNext,
                             {
-                              id: id,
+                             key: id,
                               title: books.title,
-                              author: books.author_name?.[0],
-                              cover: books.cover_i,
+                              author_name: books.authors[0].author.key,
+                              cover_i: books.covers[0]
+
                             },
                           ]);
                     }}
                     className=" rounded-[9px] bg-[#fdd6ae] py-1 px-2 transition-all hover:bg-[#fcb773]"
                   >
-                    {readNext.some((read) => read.id === id)
+                    {readNext.some((read) => read.key === id)
                       ? "✓ On my list"
                       : "+ Want to read"}
                   </button>
                   <button
                     onClick={() => {
-                      haveRead.some((read) => read.id === id)
-                        ? setHaveRead(haveRead.filter((read) => read.id !== id))
+                      haveRead.some((read) => read.key === id)
+                        ? setHaveRead(haveRead.filter((read) => read.key !== id))
                         : setHaveRead([
                             ...haveRead,
                             {
-                              id: id,
+                            key: id,
                               title: books.title,
-                              author: books.author_name?.[0],
-                              cover: books.cover_i,
+                              author_name: books.authors[0].author.key,
+                              cover_i: books.covers[0]
                             },
                           ]);
                     }}
                     className=" rounded-[9px] bg-[#fdd6ae] py-1 px-2 transition-all hover:bg-[#fcb773]"
                   >
-                    {haveRead.some((read) => read.id === id)
+                    {haveRead.some((read) => read.key === id)
                       ? "✓ Marked as read"
                       : "+ Mark as read"}
                   </button>
