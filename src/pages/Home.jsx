@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Hero from "../components/Hero.jsx";
-import Header from "../components/Header.jsx";
 import BookGrid from "../components/BookGrid.jsx";
 import { Link } from "react-router";
 function Home() {
@@ -19,10 +18,9 @@ function Home() {
 
     getData();
   }, []);
-
+console.log(books)
   return (
     <>
-      <Header />
 
       <main className="bg-[#FDF6EC]">
         

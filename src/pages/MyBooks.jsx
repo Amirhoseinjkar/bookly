@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Header from "../components/Header";
 import SearchGrid from "../components/SearchGrid";
 import { IoBookOutline, IoBookmarkOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -23,7 +22,6 @@ function MyBooks() {
 
   return (
     <div className="min-h-screen bg-[#FDF6EC]">
-      <Header />
 
       <main className="px-5 py-10 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">

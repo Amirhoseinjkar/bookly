@@ -1,4 +1,5 @@
 import header from "../assets/headerr.png";
+import { Link } from "react-router";
 function Hero (){
 return(
   
@@ -19,10 +20,11 @@ return(
               Discover stories worth remembering and keep track of the books you
               want to read.
             </p>
-
+             <Link to='/popular-all'>
             <button className="mt-5 rounded-full bg-[#FFB38A] px-5 py-2.5 text-sm font-medium text-[#24201D] transition duration-300 hover:bg-[#FFD6A5] hover:shadow-lg sm:mt-6">
               Explore books
             </button>
+            </Link>
           </div>
         </div>
 

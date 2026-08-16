@@ -10,3 +10,9 @@ const response = await fetch(` https://openlibrary.org/trending/monthly.json?${c
 const data = await response.json()
 return data.works
 }
+
+export async function someCategories(name){
+    const response = await fetch(`https://openlibrary.org/subjects/${name}.json`)
+    const data = await response.json()
+    return data
+}

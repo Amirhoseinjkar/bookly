@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Header from "../components/Header.jsx";
 import { IoArrowBack, IoStar } from "react-icons/io5";
 import { FiBookOpen, FiCalendar, FiGlobe } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -48,7 +47,7 @@ function BookDetails() {
   if (!books) {
     return (
       <>
-        <Header />
+       
 
         <main className="flex min-h-[calc(100vh-64px)] items-center justify-center bg-[#FDF6EC]">
           <p className="text-[#806F63]">Loading book...</p>
@@ -64,7 +63,7 @@ function BookDetails() {
 
   return (
     <>
-      <Header />
+      
 
       <main className="min-h-[calc(100vh-64px)] bg-[#FDF6EC] px-5 py-8 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl">
