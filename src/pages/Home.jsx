@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Hero from "../components/Hero.jsx";
 import BookGrid from "../components/BookGrid.jsx";
 import { Link } from "react-router";
+import CategoryListing from "../components/CategoryListing.jsx";
 function Home() {
   const [books, setBooks] = useState([]);
 
@@ -53,6 +54,7 @@ console.log(books)
           <BookGrid books={books} />
 
         </section>
+        <CategoryListing />
 
       </main>
     </>

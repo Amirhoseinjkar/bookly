@@ -8,6 +8,7 @@ import PopularBooks from './pages/PopularBooks.jsx'
 import Categories from './pages/Categories.jsx'
 import Header from './components/Header.jsx'
 import CategoryDetails from './pages/CategoryDetails.jsx'
+import Footer from './components/Footer.jsx'
 function App(){
   return(
     <>
@@ -21,6 +22,7 @@ function App(){
       <Route path='/categories' element={<Categories />} />
       <Route path='/categories/:id' element={<CategoryDetails />} />
     </Routes>
+    <Footer />
     </>
   )
 

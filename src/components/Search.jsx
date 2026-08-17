@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { searchBooks } from "../api";
 import SearchGrid from "../components/SearchGrid";
-import Header from "./Header.jsx";
 
 function Search() {
   const [searchParams] = useSearchParams();
@@ -52,10 +51,10 @@ function Search() {
 
   return (
   <>
-  <Header />
+  
     <main className="min-h-[calc(100vh-64px)] bg-[#FDF6EC] px-5 py-8">
       <div className="mx-auto max-w-7xl">
-        <button onClick={()=>window.history.back() } className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-[#B07A5A] hover:text-[#F58448] border border-[#B07A5A] hover:border-[#F58448] rounded-md px-3 py-1 transition-colors duration-200">
+        <button onClick={()=>window.history.back() } className="mb-4 inline-flex items-center gap-2 text-sm font-medium text-[#B07A5A] hover:text-[#F58448] rounded-md px-3 py-1 transition-colors duration-200">
         
           <span>←</span> Go back
         </button>
