@@ -3,9 +3,11 @@ import Hero from "../components/Hero.jsx";
 import BookGrid from "../components/BookGrid.jsx";
 import { Link } from "react-router";
 import CategoryListing from "../components/CategoryListing.jsx";
+import QuoteSection from "../components/QuoteSection.jsx";
+import {newReleases} from '../api.js'
 function Home() {
   const [books, setBooks] = useState([]);
-
+  const [newBooks,setNewBooks]=useState([])
   useEffect(() => {
     async function getData() {
       const response = await fetch(
@@ -15,11 +17,16 @@ function Home() {
       const data = await response.json();
 
       setBooks(data.works);
+          const newReleaseResponse = await newReleases()
+          setNewBooks(newReleaseResponse)
+
+
     }
+
 
     getData();
   }, []);
-console.log(books)
+console.log(newBooks)
   return (
     <>
 
@@ -40,7 +47,7 @@ console.log(books)
                 Popular this month
               </h2>
                  <Link to='/popular-all'>
-              <button className="hidden text-sm font-medium text-[#9B5E3C] transition-colors hover:text-[#FF9B68] sm:block ">
+              <button className=" text-sm font-medium text-[#9B5E3C] transition-colors hover:text-[#FF9B68] sm:block ">
                 See all →
               </button>
               </Link>
@@ -55,7 +62,13 @@ console.log(books)
 
         </section>
         <CategoryListing />
-
+        <h2 className="font-serif text-2xl font-semibold text-[#332B26] sm:text-3xl pl-9">
+                Top rated fiction
+              </h2>
+              <div className="px-9">
+          <BookGrid books={newBooks} />
+          </div>
+          <QuoteSection />
       </main>
     </>
   );
