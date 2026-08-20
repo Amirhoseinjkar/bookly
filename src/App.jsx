@@ -1,5 +1,6 @@
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Search from './components/Search.jsx'
 import MyBooks from './pages/MyBooks.jsx'
@@ -9,7 +10,18 @@ import Categories from './pages/Categories.jsx'
 import Header from './components/Header.jsx'
 import CategoryDetails from './pages/CategoryDetails.jsx'
 import Footer from './components/Footer.jsx'
+import { useEffect } from 'react'
 function App(){
+   const {pathname} = useLocation();
+  useEffect(() => {
+   
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+    
+  }, [pathname]);
   return(
     <>
     <Header />
