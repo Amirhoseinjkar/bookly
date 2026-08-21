@@ -10,6 +10,8 @@ import Categories from './pages/Categories.jsx'
 import Header from './components/Header.jsx'
 import CategoryDetails from './pages/CategoryDetails.jsx'
 import Footer from './components/Footer.jsx'
+import Register from './pages/Register.jsx'
+import LogIn from './pages/LogIn.jsx'
 import { useEffect } from 'react'
 function App(){
    const {pathname} = useLocation();
@@ -27,6 +29,8 @@ function App(){
     <Header />
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/login' element={<LogIn />} />
+      <Route path='register' element={<Register/>}/>
       <Route path='/search' element={<Search/>} />
       <Route path='/book-details/:id' element={<BookDetails/>} />
       <Route path='/my-books' element={<MyBooks/>} />
