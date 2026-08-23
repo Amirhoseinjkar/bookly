@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logo from "../assets/logo.jpeg";
-import user from "../assets/user.png";
 import { NavLink, useNavigate } from "react-router";
 import { IoMdSearch } from "react-icons/io";
+import userIcon from "../assets/user.png";
+import AuthContext from "../context/AuthContext";
 
 
 function Header() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
-
+ const {user}= useContext(AuthContext)
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Browse", path: "/popular-all" },
@@ -86,17 +87,51 @@ function Header() {
 
               </button>
             </div>
-
-            <button
-              aria-label="Profile"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D8C8BA] bg-[#FFF9F2] transition-all hover:border-[#FFB38A] hover:bg-[#FFF0E1]"
-            >
-              <img
-                src={user}
-                alt=""
-                className="h-4 w-4 opacity-75"
-              />
-            </button>
+              {user ? (
+  <NavLink to="/profile">
+    <button
+      aria-label="Profile"
+      className="
+        group flex h-10 w-10 items-center justify-center 
+        rounded-full 
+        border border-[#E8DCCF]
+        bg-[#FFF9F2]
+        transition-all duration-300
+        hover:border-[#FFB38A]
+        hover:bg-[#FFF0E1]
+        hover:shadow-md
+      "
+    >
+      <img
+        src={userIcon}
+        alt="Profile"
+        className="
+          h-5 w-5 opacity-70 
+          transition-transform duration-300
+          group-hover:scale-110
+        "
+      />
+    </button>
+  </NavLink>
+) : (
+  <NavLink to="/login">
+    <button
+      className="
+        rounded-full
+        bg-[#FFB38A]
+        px-5 py-2
+        text-sm font-medium
+        text-[#332B26]
+        transition-all duration-300
+        hover:bg-[#FFD6A5]
+        hover:shadow-md
+      "
+    >
+      Log in
+    </button>
+  </NavLink>
+)}
+            
 
           </div>
         </div>
