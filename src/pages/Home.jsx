@@ -8,11 +8,11 @@ import {newReleases} from '../api.js'
 function Home() {
   const [books, setBooks] = useState([]);
   const [newBooks,setNewBooks]=useState([])
-  const [loading, setLoading] = useState(false);
+  
   useEffect(() => {
    
     async function getData() {
-       setLoading(true);
+     
       const response = await fetch(
         "https://openlibrary.org/trending/monthly.json?limit=10&page=1"
       );
@@ -23,7 +23,7 @@ function Home() {
           const newReleaseResponse = await newReleases()
           setNewBooks(newReleaseResponse)
 
-setLoading(false);
+
     }
 
     
@@ -33,15 +33,7 @@ setLoading(false);
 console.log(newBooks)
   return (
     <>
-       {loading && (
-  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FDF6EC]/70 backdrop-blur-sm">
-    <div className="h-14 w-14 animate-spin rounded-full border-4 border-[#B07A5A] border-t-transparent" />
-
-    <p className="mt-4 text-sm font-medium text-[#66574D]">
-      Would you wait a bit, please?
-    </p>
-  </div>
-)}
+    
       <main className="bg-[#FDF6EC]">
         
         <Hero  />

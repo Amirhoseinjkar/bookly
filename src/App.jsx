@@ -12,6 +12,7 @@ import CategoryDetails from './pages/CategoryDetails.jsx'
 import Footer from './components/Footer.jsx'
 import Register from './pages/Register.jsx'
 import LogIn from './pages/LogIn.jsx'
+import Profile from './pages/Profile.jsx'
 import { useEffect } from 'react'
 function App(){
    const {pathname} = useLocation();
@@ -37,6 +38,7 @@ function App(){
       <Route path='/popular-all' element={<PopularBooks/>} />
       <Route path='/categories' element={<Categories />} />
       <Route path='/categories/:id' element={<CategoryDetails />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
     <Footer />
     </>

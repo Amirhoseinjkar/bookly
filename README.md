@@ -1,18 +1,54 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Bookly 📚
 
-Currently, two official plugins are available:
+Bookly is a responsive book discovery and reading tracker built with React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+It allows users to discover books, search for titles and authors, browse categories, view detailed book information, and keep track of books they want to read or have already read.
 
-## React Compiler
+## Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- 🔎 Search for books by title or author
+- 📚 Browse popular and newly released books
+- 🏷️ Browse books by category
+- 📖 View detailed information about individual books
+- 📌 Add books to a "Want to Read" list
+- ✅ Mark books as "Have Read"
+- 🔐 User registration and login with Firebase Authentication
+- 👤 User profile page
+- 🚪 User logout
+- 💾 Persistent reading lists using LocalStorage
+- 📱 Responsive design for desktop and mobile
+- ⏳ Loading and empty states
 
-Note: This will impact Vite dev & build performances.
+## Built With
 
-## Expanding the ESLint configuration
+- React
+- React Router
+- Tailwind CSS
+- Firebase Authentication
+- Open Library API
+- React Icons
+- Vite
+- LocalStorage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## API
+
+Bookly uses the [Open Library API](https://openlibrary.org/developers/api) to retrieve book information, covers, categories, and search results.
+
+## Authentication
+
+Firebase Authentication is used to handle:
+
+- User registration
+- User login
+- Authentication state
+- User logout
+
+The application uses React Context to make the current authentication state available throughout the application.
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Amirhoseinjkar/bookly.git
