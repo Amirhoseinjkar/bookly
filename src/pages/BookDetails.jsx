@@ -117,7 +117,7 @@ function BookDetails() {
                             },
                           ]);
                     }}
-                    className={`flex items-center gap-2 rounded-full px-2 py-2 text-sm font-medium transition-all duration-200 ${
+                    className={`flex items-center gap-2 w-[110px] rounded-full  px-2 py-2 text-sm font-medium transition-all duration-200 ${
                       readNext.some((read) => read.key === id)
                         ? "bg-[#E8DCCF] text-[#66574D] hover:bg-[#DFCFC0]"
                         : "bg-[#FFB38A] text-[#332B26] hover:bg-[#FCA878] hover:shadow-md"
@@ -143,7 +143,7 @@ function BookDetails() {
                             },
                           ]);
                     }}
-                    className={`flex items-center gap-2 rounded-full border px-2 py-2 text-sm font-medium transition-all duration-200  ${
+                    className={`flex w-[120px] items-center gap-2 rounded-full border px-2 py-1 text-sm font-medium transition-all duration-200  ${
                       haveRead.some((read) => read.key === id)
                         ? "border-[#D8C9BC] bg-[#E8DCCF] text-[#66574D] hover:bg-[#DFCFC0]"
                         : "border-[#E8DCCF] bg-[#FFF9F2] text-[#66574D] hover:border-[#FFB38A] hover:bg-[#FFF0E1]"
