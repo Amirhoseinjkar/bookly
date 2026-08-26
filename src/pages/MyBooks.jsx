@@ -2,8 +2,11 @@ import { useState } from "react";
 import SearchGrid from "../components/SearchGrid";
 import { IoBookOutline, IoBookmarkOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
 
 function MyBooks() {
+  const {user} = useContext(AuthContext)
   const [activeTab, setActiveTab] = useState("readNext");
 
   const [haveRead, setHaveread] = useState(() => {
@@ -21,7 +24,9 @@ function MyBooks() {
   const activeBooks = activeTab === "readNext" ? readNext : haveRead;
 
   return (
-    <div className="min-h-screen bg-[#FDF6EC]">
+     <>
+     {user? 
+      <div className="min-h-screen bg-[#FDF6EC]">
 
       <main className="px-5 py-10 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
@@ -151,6 +156,45 @@ function MyBooks() {
         </div>
       </main>
     </div>
+      : 
+      
+<div className="min-h-screen bg-[#FDF6EC] flex items-center justify-center px-5">
+  <div className="w-full max-w-md rounded-2xl border border-[#E8DCCF] bg-[#FFF9F2] p-8 text-center shadow-sm">
+
+    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#FDEBD9] text-[#B07A5A]">
+      <IoBookOutline className="text-3xl" />
+    </div>
+
+    <h1 className="mt-6 font-serif text-3xl font-semibold text-[#332B26]">
+      Your library is waiting
+    </h1>
+
+    <p className="mt-3 text-sm leading-6 text-[#806F63]">
+      Sign in to keep track of the books you want to read and the stories
+      you've already finished.
+    </p>
+
+    <div className="mt-6 flex justify-center gap-3">
+      <Link
+        to="/login"
+        className="rounded-full bg-[#FFB38A] px-6 py-2.5 text-sm font-medium text-[#332B26] transition-all hover:bg-[#FCA878] hover:shadow-md"
+      >
+        Log in
+      </Link>
+
+      <Link
+        to="/register"
+        className="rounded-full border border-[#DCCDBF] bg-[#FFF9F2] px-6 py-2.5 text-sm font-medium text-[#806F63] transition-all hover:bg-[#FDF0E3]"
+      >
+        Create account
+      </Link>
+    </div>
+
+  </div>
+</div>
+      }
+     </>
+    
   );
 }
 

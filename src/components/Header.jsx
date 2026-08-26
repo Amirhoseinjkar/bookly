@@ -117,9 +117,10 @@ function Header() {
   <NavLink to="/login">
     <button
       className="
+      w-[60px]
         rounded-full
         bg-[#FFB38A]
-        px-5 py-2
+        px-2 py-2
         text-sm font-medium
         text-[#332B26]
         transition-all duration-300
