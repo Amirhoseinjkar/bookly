@@ -50,5 +50,39 @@ The application uses React Context to make the current authentication state avai
 
 ### 1. Clone the repository
 
-```bash
 git clone https://github.com/Amirhoseinjkar/bookly.git
+2. Navigate to the project
+cd bookly
+3. Install dependencies
+npm install
+4. Start the development server
+npm run dev
+
+The application will then be available at the local development URL provided by Vite.
+
+Project Structure
+src/
+├── assets/
+├── components/
+├── context/
+├── pages/
+├── api.js
+├── firebase.js
+├── App.jsx
+└── main.jsx
+What I Learned
+
+This project was built as a learning project while developing my React skills.
+
+Through Bookly, I practiced:
+
+Building reusable React components
+Managing state with useState
+Handling side effects with useEffect
+Sharing application state with Context API
+Dynamic routing with React Router
+Working with URL parameters and search parameters
+Firebase Authentication
+Persisting data with LocalStorage
+Creating responsive interfaces with Tailwind CSS
+Handling loading, empty, and error states
